@@ -4,3 +4,4 @@ Questo repo è solamente una cartella contenente file utili all'esplorazione di 
 vari linguaggi di programmazione.<br>
 Lo scopo è quasi solamente didattico (cambiamento) e forse verrà aggiornato col tempo. <br>
 Ulteriore cambiamento.
+altro cambiamento.
