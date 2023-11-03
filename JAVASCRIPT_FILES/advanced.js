@@ -43,5 +43,9 @@ function outer() {
 }
 
 const f = outer()
+const g = outer()
 f()
 f() 
+g()
+g()
+g()
