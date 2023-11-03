@@ -33,19 +33,63 @@ let a = 10;
    prima, la funzione inner si "ricorda" il valore precedente di counter.
 */
 
-function outer() {
-    let counter = 0
-    function inner() {
-        counter++
-        console.log(counter)
+// function outer() {
+//     let counter = 0
+//     function inner() {
+//         counter++
+//         console.log(counter)
+//     }
+//     return inner // in js è possibile ritornare una funzione.
+// }
+
+// const f = outer()
+// const g = outer()
+// f()
+// f() 
+// g()
+// g()
+// g()
+
+/*
+    FUNCTION CURRYING: praticamente una concatenazione di chiamate di funzinoni;
+*/
+
+// function sum(a, b, c) {
+//     return a + b + c
+// }
+
+// console.log(sum(1, 2, 3))
+
+// function sum(number) {
+//     let counter = number 
+//     function inner_sum(arg) {
+//         counter = counter + arg
+//         return inner_sum
+//     }
+//     return inner_sum
+// }
+
+// console.log(sum(1)(2)(3))
+
+/*
+    THIS KEYWORD: semantica diversa rispetto ad altri linguaggi di programmazione ad oggetti.
+*/
+
+const persona = {
+    'name' : 'leonardo',
+    'eta'  : 21,
+    greet : function () {
+        console.log(`Hi my name is ${this.name}`);
     }
-    return inner // in js è possibile ritornare una funzione.
 }
 
-const f = outer()
-const g = outer()
-f()
-f() 
-g()
-g()
-g()
+const persona_2 = {
+    'name' : 'anita',
+    'eta'  : 19,
+    greet : function () {
+        console.log(`Hi my name is ${this.name}`);
+    }
+}
+
+persona.greet();
+persona_2.greet();
