@@ -13,10 +13,13 @@ let a = 10;
 
 function outer() {
     let b = 20;
-    function inner() {
+    function inner() { // questa funzione puó essere acceduta solamente da outer.
+       let a = 30
+       let b = 30
        let c = 30;
        console.log(a, b, c);
     }
+    inner();
 }
 
-inner();
+outer();
