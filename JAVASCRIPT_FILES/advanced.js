@@ -11,15 +11,37 @@
 
 let a = 10;
 
+// function outer() {
+//     let b = 20;
+//     function inner() { // questa funzione puó essere acceduta solamente da outer.
+//        let a = 30
+//        let b = 30
+//        let c = 30;
+//        console.log(a, b, c);
+//     }
+//     inner();
+// }
+// outer();
+
+/* 
+   CLOSURE: una closure sembra esere uno stato permanente al quale una
+   funzione puó accedere.
+   In questo esempio, la funzione outer, crea una variabile counter. 
+   Dichiara e definisce poi una funzione inner().
+   Ritorna la funzione.
+   Invocando la fuznione ritornata, ci si accorge che nell'invocazione successiva alla
+   prima, la funzione inner si "ricorda" il valore precedente di counter.
+*/
+
 function outer() {
-    let b = 20;
-    function inner() { // questa funzione puó essere acceduta solamente da outer.
-       let a = 30
-       let b = 30
-       let c = 30;
-       console.log(a, b, c);
+    let counter = 0
+    function inner() {
+        counter++
+        console.log(counter)
     }
-    inner();
+    return inner // in js è possibile ritornare una funzione.
 }
 
-outer();
+const f = outer()
+f()
+f() 
