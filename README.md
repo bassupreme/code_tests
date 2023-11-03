@@ -7,4 +7,4 @@ Lo scopo è quasi solamente didattico e forse verrà aggiornato col tempo. <br>
 ## JAVASCRIPT_FILES
 
 Cartella contenente test fatti utilizzando js. <br>
-Questo repo viene anche utilizzato per conoscere concetti relativi a github.
+Questo repo viene anche utilizzato per conoscere concetti relativi a github. <br>
