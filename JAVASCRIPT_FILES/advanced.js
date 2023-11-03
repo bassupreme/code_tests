@@ -75,21 +75,45 @@ let a = 10;
     THIS KEYWORD: semantica diversa rispetto ad altri linguaggi di programmazione ad oggetti.
 */
 
-const persona = {
-    'name' : 'leonardo',
-    'eta'  : 21,
-    greet : function () {
-        console.log(`Hi my name is ${this.name}`);
+// const persona = {
+//     'name' : 'leonardo',
+//     'eta'  : 21,
+//     greet : function () {
+//         console.log(`Hi my name is ${this.name}`);
+//     }
+// }
+
+// const persona_2 = {
+//     'name' : 'anita',
+//     'eta'  : 19,
+//     greet : function () {
+//         console.log(`Hi my name is ${this.name}`);
+//     }
+// }
+// function sayMyName(person) {
+//     console.log(`Hi my name is ${this.name}`);
+// }
+
+// persona.greet(); // il binding è implicito nell'oggetto 
+// persona_2.greet();
+// sayMyName.call(persona) // esplicitare il binding
+
+function Person(name, surname = '') {
+    /* 
+        this = {} quetso è quello che js fa dietro le quinte
+        ovvero: un oggetto vuoto viene creato 
+        successivamente, si vanno ad aggiungere dei campi
+        mediante .campo_da_aggiungere
+    */
+    this.name = name
+    this.surname = surname
+    this.greet = function() {
+        console.log(`Hi my name is ${this.name} ${this.surname}`);
     }
 }
 
-const persona_2 = {
-    'name' : 'anita',
-    'eta'  : 19,
-    greet : function () {
-        console.log(`Hi my name is ${this.name}`);
-    }
-}
+const p1 = new Person('leonardo', 'basso');
+const p2 = new Person('anita', 'basso');
 
-persona.greet();
-persona_2.greet();
+p1.greet();
+p2.greet();
