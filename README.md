@@ -8,3 +8,4 @@ Lo scopo è quasi solamente didattico e forse verrà aggiornato col tempo. <br>
 
 Cartella contenente test fatti utilizzando js. <br>
 Questo repo viene anche utilizzato per conoscere concetti relativi a github.
+Particolare enfasi sulle strategie di merge.
