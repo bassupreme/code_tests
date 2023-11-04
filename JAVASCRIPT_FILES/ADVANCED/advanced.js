@@ -122,5 +122,37 @@ let a = 10;
 // p2.greet();
 
 /*
-    PROTOTYPE: 
+    PROTOTYPE: ogni oggetto js ha all'interno di esso la proprietá prototype:
+    praticamente questa proprietá é un oggetto js che contiene al suo interno tante altre proprietá
+    che gli oggetti di quel tipo avranno.
 */
+
+function Person(name, surname) {
+    this.name = name
+    this.surname = surname 
+}
+// instanziare variabili mediante Person (funzione costruttore)
+const p1 = new Person('Bruce','Wayne');
+const p2 = new Person('Elon','Musk');
+
+// p1.getFullName = function() { // questa funzionalitá è solo agganciata a p1...come farlo per ogni Person
+//     return this.name + ' ' + this.surname;
+// }
+
+// in questo modo, tutte le variabili instanziate grazie a Person
+// hanno la proprietá getFullName
+Person.prototype.getFullName = function() { 
+    return this.name + ' ' + this.surname;
+}
+
+console.log(p1.getFullName());
+console.log(p2.getFullName());
+
+// ereditarietá tramite prototipo
+function SuperHero(name, surname) {
+    Person.call(this, name, surname)
+}
+SuperHero.prototype = Object.create(Person.prototype); 
+
+const spiderman = new SuperHero('Peter', 'Parker');
+console.log(spiderman.getFullName());
