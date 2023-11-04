@@ -26,18 +26,18 @@ const tabellina_2 = {
     [Symbol.iterator] : function() {
         let step = 0 
         const iterator = {
-            'next' : function() {
+            next : function() {
                 step++
                 if (step <= 10) {
-                    return {'value' : 2*step, 'done' : false}
-                } 
-                return {'value' : undefined, 'done' : true}
+                    return {value : 2*step, done : false}
+                }
+                return {value : undefined, done : true}
             },
         } 
         return iterator
     },
 }
 
-for (const item in tabellina_2) {
+for (const item of tabellina_2) {
     console.log(item)
 }
