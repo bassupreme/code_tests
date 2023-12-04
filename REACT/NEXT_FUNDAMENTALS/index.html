@@ -33,12 +33,30 @@
       function HomePage() {
         const fam = ["Leonardo", "Anita", "Emanuela"];
 
+        {
+            // array[0]: membro dello stato
+            // array[1]: metodo che aggiorna lo stato
+        }
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClickEvent() {
+            setLikes(likes + 1);
+        }
+
         return (
             <div>
                 <Header title="Tilde 💙"/>
                 <ul>
-                { fam.map((item) => <li>{'nome: ' + item}</li>) }
+                { 
+                    // le parentesi sono un modo per entrare in 'javascript land'
+                    // => questo è vanilla javascript
+                    // => in js si possono tag html.
+
+                    fam.map((item) => <li>{'nome: ' + item}</li>) 
+                } 
                 </ul>
+                <button onClick={handleClickEvent} id=1> LIKE {likes}</button>
+                <button onClick={handleClickEvent} id=2> LIKE {likes}</button>
             </div>
         )
       }
