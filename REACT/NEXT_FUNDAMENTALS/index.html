@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById('app');
+    
+        // introduzione delle props per passare informazioni verso i componenti
+      
+        
+      let stato = {
+        "status" : 0,
+      };
+
+      function Header({title}) {
+        if (stato.status == 1) {
+            return (<h1>I love the defaults</h1>)
+        }
+        return (<h1>{`I love ${title}`}</h1>)
+      }
+
+      function HomePage() {
+        const fam = ["Leonardo", "Anita", "Emanuela"];
+
+        return (
+            <div>
+                <Header title="Tilde 💙"/>
+                <ul>
+                { fam.map((item) => <li>{'nome: ' + item}</li>) }
+                </ul>
+            </div>
+        )
+      }
+
+      ReactDOM.render(<HomePage/>, app);
+    </script>
+</body>
+
+</html>
